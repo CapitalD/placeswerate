@@ -28,7 +28,12 @@ module.exports = function(sequelize, DataTypes) {
         notEmpty: true
       }
     }
+  }, {
+    classMethods: {
+      associate: function(models) {
+        List.hasMany(models.Place)
+      }
+    }
   });
-
   return List;
 };

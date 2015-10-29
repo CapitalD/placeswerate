@@ -10,7 +10,7 @@ module.exports = [
   }, {
     "model": "List",
     "data": {
-      "name": "Wellington in a day",
+      "name": "Wellington Restaurants",
       "location": "Wellington",
       "lat": "-41.2864603",
       "lng": "174.776236"
