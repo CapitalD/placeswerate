@@ -4,9 +4,11 @@ var models = require('../models');
 
 router.get('/', function(req, res, next) {
   models.List.findAll({
-    order: [
-      ['updatedAt', 'DESC']
-    ]
+    attributes: Object.keys(models.List.attributes).concat([
+      [
+        models.sequelize.literal('(SELECT COUNT("Places"."id") FROM "Places" WHERE "Places"."ListId" = "List"."id")'),'placeCount'
+      ]
+    ])
   }).then(function(lists) {
     res.render('lists', {
       title: "All lists",

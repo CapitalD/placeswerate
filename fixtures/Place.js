@@ -27,5 +27,12 @@ module.exports = [
       "comment": "Smart casual dining, mainly cooked over a huge charcoal fire.  Superb grilled meats (steaks etc) and raw bar with fresh oysters.  No bookings, so be prepared to have a drink at the bar while waiting for a table if you arrive at a busy time.",
       "ListId": 2
     }
-  },
+  }, {
+    "model": "Place",
+    "data": {
+      "name": "Floriditas",
+      "comment": "Casual dining on Cuba St.",
+      "ListId": 2
+    }
+  }
 ];
