@@ -1,0 +1,38 @@
+extends layout
+
+block content
+
+  .container-fluid
+  
+    .row
+      .col-xs-10.col-xs-offset-1
+        h1
+          =place.name
+        p
+          =place.comment
+        #google_attr
+        
+    .row
+      .col-sm-6.col-sm-offset-1
+        .row
+          .col-xs-6
+            h2 Contact Details
+            p#place_address
+            p#place_phone
+            p
+              a#place_website(target='_blank')
+          .col-xs-6
+            h2 Opening Hours
+            p#place_hours
+            
+      .col-sm-4
+        #map
+
+block body_end
+  script(type='text/javascript').
+    var google_api_key = "#{google_api_key}";
+    var google_placeid = "#{place.google_placeid}";
+    var map_lat = parseFloat("#{place.List.lat}");
+    var map_lng = parseFloat("#{place.List.lng}");
+
+  script(src='https://maps.googleapis.com/maps/api/js?key='+google_api_key+'&signed_in=true&libraries=places&callback=get_place_info', async, defer)

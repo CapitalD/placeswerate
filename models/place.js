@@ -9,6 +9,15 @@ module.exports = function(sequelize, DataTypes) {
     },
     comment: {
       type: DataTypes.STRING
+    },
+    google_placeid: {
+      type: DataTypes.STRING
+    }
+  }, {
+    classMethods: {
+      associate: function(models) {
+        Place.belongsTo(models.List)
+      }
     }
   });
   return Place;
